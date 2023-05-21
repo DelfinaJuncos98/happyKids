@@ -1,0 +1,19 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    .menu-header-flexbox{
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.foto-inicio-flexbox1{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.foto-inicio-flexbox2{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0px;
+}

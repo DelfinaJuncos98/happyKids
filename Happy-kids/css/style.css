@@ -1,0 +1,52 @@
+@charset "UTF-8";
+header {
+  background-color: #6EB9FC;
+  padding: #6EB9FC 5px;
+  border: #6EB9FC solid 20px;
+}
+header a {
+  font-size: x-large;
+  margin: 15px;
+  color: #fff;
+}
+header a h3 {
+  color: #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+header .menu-header-flexbox {
+  display: flex;
+  flex-direction: row;
+}
+
+.foto-inicio-flexbox1 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.foto-inicio-flexbox2 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0px;
+}
+
+.pequeña {
+  width: 170px;
+  height: 200px;
+}
+
+.mediana {
+  width: 400px;
+  height: 400px;
+}
+
+.grande {
+  width: 500px;
+  height: 470px;
+}
+
+/*# sourceMappingURL=style.css.map */
