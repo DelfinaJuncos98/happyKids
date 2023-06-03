@@ -1,0 +1,100 @@
+@mixin grande{
+    @media only screen and (min-width: 1024px){
+       @content;
+    }
+ }
+ @mixin mediano{
+    @media only screen and (max-width: 768px){
+       @content;
+    }
+ }
+ @mixin pequeño{
+    @media only screen and (max-width: 375px){
+       @content;
+    }
+ }
+$color-blanco: #fff;
+$color-celeste: #B0DAFF;
+%grid{
+    display: grid;
+    grid-column: 2;
+}
+.box-titulo-tabla-talles{
+    display: grid;
+    columns: 3;
+    background-color: $color-celeste;
+    box-sizing: content-box;
+    height: 110px;
+    border: solid $color-celeste;
+    @include mediano{
+        width: 768px;
+        height: 100px;
+     }
+     @include pequeño{
+        width: 372px;
+        height: 90px;
+     }
+    .frase-tabla-de-talles{
+        @extend %grid;
+        color: $color-blanco;
+        margin-top: 40px;
+        @include mediano{
+            font-size: xx-large;
+            margin: 30px 110px;
+         }
+         @include pequeño{
+            font-size: x-large;
+            margin: 30px 110px;
+         }
+    }
+    
+    
+}
+.ubicacion-tabla-talles{
+    @extend %grid;
+    .box-tabla-talles1{
+        @extend %grid;
+        grid-row: 1;
+        background-color: $color-celeste;
+        box-sizing: content-box;
+        height: 350px;
+        width: 800px ;
+        padding: 10px;
+        margin: 40px;
+        font-size: x-large;
+        color: $color-blanco;
+        @include mediano{
+            width: 768px;
+            margin: 5px 0px;
+            font-size: x-large;
+         }
+         @include pequeño{
+            width: 355px ;
+            margin: 5px 0px;
+            font-size: medium;
+         }
+
+    }
+    .box-tabla-talles2{
+        @extend %grid;
+        grid-row: 2;
+        background-color: $color-celeste;
+        box-sizing: content-box;
+        height: 350px;
+        width: 800px ;
+        padding: 10px;
+        margin: 40px;
+        font-size: x-large;
+        color: $color-blanco;
+        @include mediano{
+            width: 768px;
+            margin: 5px 0px;
+            font-size: x-large;
+         }
+         @include pequeño{
+            width: 355px ;
+            margin: 5px 0px;
+            font-size: medium;
+         }
+    }
+}

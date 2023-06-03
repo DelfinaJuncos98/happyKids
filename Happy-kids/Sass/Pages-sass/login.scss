@@ -1,0 +1,79 @@
+@mixin grande{
+    @media only screen and (min-width: 1024px){
+       @content;
+    }
+ }
+ @mixin mediano{
+    @media only screen and (max-width: 768px){
+       @content;
+    }
+ }
+ @mixin pequeño{
+    @media only screen and (max-width: 375px){
+       @content;
+    }
+ }
+%ubicacion{
+    margin-bottom: 20px;
+}
+%display-flex{
+    display: flex;
+    flex-direction: column;
+}
+.box-login{
+    .login{
+        display: flex;
+        justify-content: center;
+        font-family: sans-serif;
+        margin: 75px;
+        @include mediano{
+            margin: 70px;
+         }
+         @include pequeño{
+            margin: 65px;
+         }
+    }
+    .ubicaion-login-form1{
+        @extend %display-flex;
+        align-items: center;
+        margin: 20px;
+
+        .letra-form1{
+            font-size: x-large;
+            color: black;
+            @extend %ubicacion;
+            @include mediano{
+                font-size: large; 
+             }
+             @include pequeño{
+                font-size: medium; 
+             }
+        
+        }
+        .espacio-input{
+            @extend %ubicacion;
+        }
+        
+    }
+    .ubicaion-login-form1{
+        @extend %display-flex;
+        align-items: center;
+        margin: 20px;
+        .ubicacion-boton{
+            margin: 40px;
+        }
+    }
+.espacio1{
+    @include mediano{
+        margin-bottom: 350px;
+     }
+    .tamaño-texto-login1{
+        @extend %display-flex;
+        font-size: medium;
+        align-items: center;
+        margin: 10px;
+        color: black;
+        }
+}
+   
+}

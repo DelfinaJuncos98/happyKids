@@ -1,0 +1,89 @@
+@mixin grande{
+    @media only screen and (min-width: 1024px){
+       @content;
+    }
+ }
+ @mixin mediano{
+    @media only screen and (max-width: 768px){
+       @content;
+    }
+ }
+ @mixin pequeño{
+    @media only screen and (max-width: 375px){
+       @content;
+    }
+ }
+$color-blanco: #fff;
+$color-celeste: #B0DAFF;
+.box-oferta-catalogo{
+    display: block;
+    background-color: $color-celeste;
+    box-sizing: content-box;
+    height: 110px;
+    border: solid $color-celeste;
+    @include mediano{
+        height: 100px;
+     }
+     @include pequeño{
+        height: 70px;
+     }
+    .frase-catalogo{
+        display: flex;
+        justify-content: center; 
+        margin-top: 35px;   
+        color: $color-blanco;
+    }
+     @include pequeño{
+        font-size: small;
+        margin-top: 15px;
+     }
+}
+.ubicacion-catalogo{
+    display: flex;
+    justify-content: space-around;
+    .box-catalogo{
+        background-color: $color-celeste;
+        box-sizing: content-box;
+        height: 300px;
+        width: 170px ;
+        padding: 10px;
+        margin: 25px;
+        @include mediano{
+            width: 65px;
+            height: 150px;
+         }
+         @include pequeño{
+            width: 25px;
+            height: 90px;
+            margin: 5px 10px;
+
+         }
+        .pequeña{
+            width: 170px;
+            height: 200px;
+            @include mediano{
+                width: 65px;
+                height: 65px;
+             }
+             @include pequeño{
+                width: 25px;
+                height: 25px;
+             }
+        }
+        .descripcion-catalogo{
+            display: flex;
+            justify-content: center;
+            margin:15px;
+            font-size: medium;
+            color: $color-blanco;
+            @include mediano{
+                font-size: small;
+                margin: 10px;
+             }
+             @include pequeño{
+                font-size: xx-small;
+                margin: 10px;
+             }
+        }
+    }
+}
