@@ -1,20 +1,34 @@
-@mixin grande{
-    @media only screen and (min-width: 1024px){
-       @content;
-    }
- }
- @mixin mediano{
-    @media only screen and (max-width: 768px){
-       @content;
-    }
- }
- @mixin pequeño{
-    @media only screen and (max-width: 375px){
-       @content;
-    }
- }
+@import 'responsive-index';
 $color-blanco: #fff;
 $color-celeste: #B0DAFF;
+.banner {
+   background-color: $color-celeste;
+   padding: 20px 5px;
+   text-align: center;
+   @include mediano2{
+      width: 900px;
+   }
+   @include mediano1{
+      width: 768px;
+   }
+   @include pequeño{
+      width: 375px;
+   }
+
+ }
+ 
+ .banner__title {
+   font-size: 24px;
+   color: $color-blanco;
+   margin-bottom: 10px;
+ }
+ 
+ .banner__description {
+   font-size: 16px;
+   color: $color-blanco;
+   margin-bottom: 20px;
+ }
+ 
 .fotos-inicio-flexbox1{
     display: flex;
     justify-content: space-between;
@@ -22,9 +36,17 @@ $color-celeste: #B0DAFF;
     .mediana{
         width: 400px;
         height: 400px;
-        @include mediano{
-            width: 220px;
-            height: 220px;
+        @include mediano3{
+         width: 300px;
+         height: 300px;
+      }
+        @include mediano2{
+         width: 250px;
+         height: 250px;
+      }
+        @include mediano1{
+            width: 200px;
+            height: 200px;
          }
          @include pequeño{
             width: 100px;
@@ -38,7 +60,13 @@ $color-celeste: #B0DAFF;
         width: 220px 220px;
         padding: 150px 100px 0;
         color: $color-blanco;
-        @include mediano{
+
+        @include mediano2{
+         height: 150px;
+         width: 200px 200px;
+         padding: 100px 75px 0;
+      }
+        @include mediano1{
             height: 120px;
             width: 180px 180px;
             padding: 80px 50px 0;
@@ -65,7 +93,13 @@ $color-celeste: #B0DAFF;
         margin-bottom: 0px;
         font-size: xx-large;
         color: $color-blanco;
-        @include mediano{
+        @include mediano2{
+         height: 170px;
+         width: 65px;
+         padding: 30px;
+         font-size: x-large;
+      }
+        @include mediano1(){
             height: 150px;
             width: 50px ;
             padding: 20px;
@@ -89,7 +123,13 @@ $color-celeste: #B0DAFF;
         margin-bottom: 20px;
         font-size: xx-large;
         color: $color-blanco;
-        @include mediano{
+        @include mediano2{
+         height: 100px;
+         width: 90px;
+         padding: 90px 100px 80px 75px;
+         font-size: x-large;
+      }
+        @include mediano1{
             height: 70px;
             width: 50px;
             padding: 60px 80px 40px 50px;
@@ -105,7 +145,7 @@ $color-celeste: #B0DAFF;
     .grande{
         width: 500px;
         height: 470px;
-        @include mediano{
+        @include mediano1{
             width: 300px;
             height: 270px;
          }
