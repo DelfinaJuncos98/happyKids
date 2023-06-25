@@ -1,18 +1,5 @@
-@mixin grande{
-    @media only screen and (min-width: 1024px){
-       @content;
-    }
- }
- @mixin mediano{
-    @media only screen and (max-width: 768px){
-       @content;
-    }
- }
- @mixin pequeño{
-    @media only screen and (max-width: 375px){
-       @content;
-    }
- }
+@import 'responsive-catalogo';
+
 $color-blanco: #fff;
 $color-celeste: #B0DAFF;
 .box-oferta-catalogo{
@@ -21,10 +8,15 @@ $color-celeste: #B0DAFF;
     box-sizing: content-box;
     height: 110px;
     border: solid $color-celeste;
+    @include mediano2{
+      width: 910px;
+   }
     @include mediano{
+        width: 775px;
         height: 100px;
      }
      @include pequeño{
+        width: 382px;
         height: 70px;
      }
     .frase-catalogo{
@@ -35,7 +27,7 @@ $color-celeste: #B0DAFF;
     }
      @include pequeño{
         font-size: small;
-        margin-top: 15px;
+
      }
 }
 .ubicacion-catalogo{
@@ -48,27 +40,41 @@ $color-celeste: #B0DAFF;
         width: 170px ;
         padding: 10px;
         margin: 25px;
-        @include mediano{
-            width: 65px;
-            height: 150px;
+        @include mediano2{
+         height: 250px;
+         width: 150px ;
+         padding: 7px;
+         margin: 20px;
+      }
+       @include mediano{
+         height: 200px;
+         width: 100px ;
+         padding: 5px;
+         margin: 10px;
+        }
+        @include pequeño{
+         height: 90px;
+         width: 45px ;
+         padding: 3px;
+         margin: 5px;
+         margin-left:1px ;
+        }
+        .pequeña{
+         width: 170px;
+         height: 200px;
+         @include mediano2(){
+            width: 140px;
+            height: 170px;
+         }
+         @include mediano{
+            width: 100px;
+            height: 140px;
          }
          @include pequeño{
-            width: 25px;
-            height: 90px;
-            margin: 5px 10px;
-
+            width: 45px;
+            height: 45px;
          }
-        .pequeña{
-            width: 170px;
-            height: 200px;
-            @include mediano{
-                width: 65px;
-                height: 65px;
-             }
-             @include pequeño{
-                width: 25px;
-                height: 25px;
-             }
+    
         }
         .descripcion-catalogo{
             display: flex;
@@ -78,12 +84,15 @@ $color-celeste: #B0DAFF;
             color: $color-blanco;
             @include mediano{
                 font-size: small;
-                margin: 10px;
+                margin: 5px;
              }
              @include pequeño{
                 font-size: xx-small;
-                margin: 10px;
+                margin: 3px;
              }
         }
     }
 }
+
+
+

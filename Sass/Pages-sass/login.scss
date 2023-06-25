@@ -1,18 +1,4 @@
-@mixin grande{
-    @media only screen and (min-width: 1024px){
-       @content;
-    }
- }
- @mixin mediano{
-    @media only screen and (max-width: 768px){
-       @content;
-    }
- }
- @mixin pequeño{
-    @media only screen and (max-width: 375px){
-       @content;
-    }
- }
+@import 'responsive-login';
 %ubicacion{
     margin-bottom: 20px;
 }
@@ -21,6 +7,14 @@
     flex-direction: column;
 }
 .box-login{
+    @include mediano{
+        width: 750px;
+        height: 600px;
+     }
+     @include pequeño{
+        width: 350px;
+        height: 400px;
+     }
     .login{
         display: flex;
         justify-content: center;
@@ -30,13 +24,19 @@
             margin: 70px;
          }
          @include pequeño{
-            margin: 65px;
+            margin: 30px;
          }
     }
     .ubicaion-login-form1{
         @extend %display-flex;
         align-items: center;
         margin: 20px;
+        @include mediano{
+            display: flex
+         }
+         @include pequeño{
+            display: flex;
+         }
 
         .letra-form1{
             font-size: x-large;
